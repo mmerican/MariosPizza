@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown()
+        });
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="height:100px">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href='@Url.Action("Index", "Home")'>
+                    <img src='@Url.Content("~/Content/Images/Mario_Logo1.jpg")' />
+                </a>
+                
+            </div>
+
+            <div class="navbar-collapse collapse" id="navbar-items">
+                <span id="navbar-items-ul">
+                <ul class="nav navbar-nav">
+                    <li class="drop50">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            Menu
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="@Url.Content("~/Menu/Index?m=dinner")">Dinner Menu</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="@Url.Content("~/Menu/Index?m=lunch")">Lunch Menu</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="@Url.Content("~/Menu/Specials")">Daily Specials</a></li>
+                        </ul>
+                    </li>                    
+                    <li class="drop50">@Html.ActionLink("Contact", "Index", "Contact")</li>
+                    <li class="drop50">@Html.ActionLink("Our Story", "About", "Home")</li>
+                    <li class="drop50" id="location-button">@Html.ActionLink("Locations", "Locations", "Store")</li>
+                </ul>
+
+
+                   
+
+
+                @{
+                //     @Html.Partial("_LoginPartial")
+                }         
+                </span>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Matthew Merican - for example purposes only (not a real website)</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

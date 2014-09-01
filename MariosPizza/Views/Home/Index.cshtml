@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Mario's Pizza & Pasta";
+}
+
+<div id="Slideshow">
+<div id="HomePageCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#HomePageCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#HomePageCarousel" data-slide-to="1"></li>
+        <li data-target="#HomePageCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+       <div class="item active" >
+           <img src="../Content/Images/Slideshow1.jpg" class="img-responsive center-block" alt=" welcome to mario's pizza" width="100%" />
+           <div class="carousel-caption">
+               <p>Welcome to Mario's Pizza</p>
+           </div>
+       </div>
+       <div class="item">
+           <img src="../Content/Images/Slideshow2.jpg" alt="Fresh Baked Pizza" width="100%" class="img-responsive center-block"  />
+           <div class="carousel-caption">
+               <p>Fresh Baked Pizza</p>
+           </div>
+       </div>
+       <div class="item">
+           <img src="../Content/Images/Slideshow3.jpg" alt="Buffalo Wings" width="100%" class="img-responsive center-block" />
+           <div class="carousel-caption">
+               <p>Buffalo Wings</p>
+           </div>
+       </div>
+       <div class="item">
+           <img src="../Content/Images/Slideshow4.jpg" alt="Baked Ziti" />
+           <div class="carousel-caption">
+               <p>Our Signature Baked Ziti</p>
+           </div>
+       </div>
+    </div><!-- carousel-inner -->
+    <a class="carousel-control left" href="#HomePageCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#HomePageCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a> 
+</div><!-- carousel slide -->
+</div><!-- jumbotron -->
+
+<div class="jumbotron" id="ItemArea">
+    <span>
+        <a href='@Url.Action("Deals", "Menu")'>
+            <img src='@Url.Content("~/Content/Images/banner-specials.jpg")' alt="Daily Specials" />
+        </a>
+        <a href='@Url.Action("Menu", "Menu")'>
+            <img src='@Url.Content("~/Content/Images/banner-menu.jpg")' alt="View Menu" />
+        </a>
+    </span>
+</div>
+
+
+@section Scripts {
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            $('.carousel').carousel();
+        });
+    </script>
+}

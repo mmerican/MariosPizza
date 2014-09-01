@@ -1,0 +1,199 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url(Images/Brick_Background1.jpg);
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+div {
+    display: block;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0;
+    margin: 0;
+}
+
+div.content {
+    display: block;
+    position: relative;
+    top: 50px;
+    width: 80%;
+    padding-top: 1em;
+    padding bottom: 1em;
+    background-color: #eeeeee;
+}
+
+#Slideshow, #ItemArea {
+    position: relative;
+    top: 50px;
+    margin-bottom: 0;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+#Slideshow {
+    margin: 0 auto;
+    
+}
+
+.item {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carousel-inner {
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+.carousel-control {
+    width: 0px;
+}
+
+#Slideshow {
+    background-color: #b94a48;
+}
+
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+#HomePageCarousel {
+    width: 504px;
+    margin: 0 auto;
+}
+
+
+.navbar {
+    background-color: #b94a48;
+}
+
+#navbar-items {
+    display: block;
+    height: 100px;
+    line-height: 90px;
+    vertical-align: bottom;
+}
+
+#navbar-items-ul {
+    display: inline-block;
+    vertical-align: bottom;
+    line-height: 100px;
+    text-align: center;
+}
+
+#menu-button {
+    
+    font-weight: bolder;
+    color: black;
+}
+
+#location-button {
+    font-weight: bold;
+}
+
+.panel {
+    position:relative;
+    top: 50px;
+    width: 100%;
+}
+
+#about-panel {
+    position: absolute;
+    top: 100px;
+    width: 80%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#mission-statement {
+    text-align: left;
+
+}
+
+div.row {
+    background-color: #eeeeee;
+    position: relative;
+    top: 50px;
+}
+
+.store-name {
+    font-weight: bold;
+    color: darkblue;
+}
+
+google-iframe {
+    margin: 10px;
+    border-color: red;
+    border-top: #c00 1px dotted;
+    border-right: #c00 2px dotted;
+    border-left: #c00 2px dotted;
+    border-bottom: #c00 4px dotted;
+}
+
+.td-border-right {
+    border-right: 1px solid gray;
+}
+
+.drop50 {
+    position: relative;
+    top: 50px;
+}
+
+.dropdown {
+    position: relative;
+    top: 25px;
+}
+
+.dropdown-toggle {
+    background-color: #b94a48;
+}
+
+.dropdown-menu {
+    top:70px;
+    background-color: #eeeeee;
+}
+
+.boldit {
+    font-weight: bold;
+}
+

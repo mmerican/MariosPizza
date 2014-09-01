@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MariosPizza.Models.Menu>
+
+@{
+    ViewBag.Title = "Index";
+    int menuLabel = 0;
+}
+
+<div class="panel">
+<h2>@ViewBag.typeOfMeal Menu</h2>
+
+@foreach (var item in Model) {
+    @:<div class="menu-groups">
+        if (menuLabel != item.CategoryId)
+        {
+            menuLabel = item.CategoryId;
+            <br /><br /><br /><br />
+            <h3 class="menu-title"><u>@Html.DisplayFor(modelItem => item.MenuCategory.CategoryName)</u></h3>
+        }
+        if (item.NewItem)
+        {
+            <img src="@Url.Content("~/Content/Images/new.gif")" alt="new item" />
+        }
+        if (item.Limited)
+        {
+            <img src="@Url.Content("~/Content/Images/limited-time-only1.png")" alt="limited time" width="40" height="40" />
+            <br />
+        }
+        <span class="boldit">@Html.DisplayFor(modelItem => item.ItemName)</span><br />
+        <span>@Html.DisplayFor(modelItem => item.Price)</span>
+        <br />
+        <span><i>@Html.DisplayFor(modelItem => item.Description)</i></span><br /><br />
+    @:</div>
+    
+}
+<br /><br />    
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.menu-groups').each(function () {
+                var cat = $(this).find('h3.menu-title').text();
+                cat = cat.replace(/\s+/g, '');
+                var urlString = "url(../Content/Images/Background/" + cat + ".jpg)";
+                $(this).css('backgroundImage', urlString);
+                $(this).css({ 'background-repeat': 'no-repeat', });
+               
+            });
+        });
+    </script>
+
+}

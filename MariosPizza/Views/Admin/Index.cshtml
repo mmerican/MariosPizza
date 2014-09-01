@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="panel">
+    <h2>Administrator Home</h2>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Menu Tasks</h3>
+            <ul>
+                <li>@Html.ActionLink("View Menu Items", "ViewItems", "Menu")</li>
+                <li>@Html.ActionLink("Create Menu Items", "Create", "Menu")</li>
+                <li>@Html.ActionLink("View Menu with Layout", "Index", "Menu")</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h3>Store Tasks</h3>
+            <ul>
+                <li class="boldit">@Html.ActionLink("View Customer Messages", "Messages", "Contact")</li>
+                <li>@Html.ActionLink("View Store Information", "Index", "Store")</li>
+                <li>@Html.ActionLink("Create New Store Location", "Create", "Store")</li>
+                <li>@Html.ActionLink("View Store Maps", "Locations", "Store")</li>
+                <li>@Html.ActionLink("Create A New Message", "Index", "Contact")</li>
+            </ul>
+        </div>
+    </div>
+</div>

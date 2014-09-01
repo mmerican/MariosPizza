@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MariosPizza.Models.Store>
+
+@{
+    ViewBag.Title = "Locations";
+    string[] googleMaps = { "<iframe class='col-md4 google-iframe' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3333.9444349822934!2d-111.99741130000001!3d33.32026809999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b04579b7bcf19%3A0xc02dd283ae3c418!2s4000+E+Ray+Rd%2C+Phoenix%2C+AZ+85044!5e0!3m2!1sen!2sus!4v1409124452881' width='400' height='300' ></iframe>",
+                              "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.601354345655!2d-111.9041716!3d33.40756309999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0861dd23c1cd%3A0x261c8414edbe82ea!2s1900+E+Broadway+Rd%2C+Tempe%2C+AZ+85282!5e0!3m2!1sen!2sus!4v1409179966237' width='600' height='450' frameborder='0' style='border:0'></iframe>" };
+    int i = 0;
+}
+<div class="row">
+    <h3><u>Locations</u></h3>
+</div>
+    @foreach (var item in Model) { 
+
+        <div class="row">
+            @Html.Raw(googleMaps[i++])
+        <div class="col-md-4">
+            <h4 class="store-name"><u>@Html.DisplayFor(modelItem => item.Name)</u></h4>
+            <p>
+                @Html.DisplayFor(modelItem => item.Address1)
+                <br />
+                @if (!(item.Address2 == null || item.Address2 == ""))
+                {
+                    @Html.DisplayFor(modelItem => item.Address2)
+                    <br />
+                }
+                @Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(model => item.State) @Html.DisplayFor(model => item.Zip)
+                <br />
+                @{ 
+                    string phoneNum = "(" + item.PhoneNumber.Substring(0, 3) + ") " + item.PhoneNumber.Substring(3, 3) + "-" + item.PhoneNumber.Substring(6);
+                    string faxNum = "(" + item.FaxNumber.Substring(0, 3) + ") " + item.FaxNumber.Substring(3, 3) + "-" + item.FaxNumber.Substring(6);
+                }
+                Phone: @phoneNum
+                <br />
+                Fax: @faxNum
+                <br />
+                <i>@Html.DisplayFor(modelItem => item.Location)</i>
+                <br />
+                Hour: @Html.DisplayFor(modelItem => item.Hours)
+                <br /><br />
+            </p>
+        </div>
+        </div>
+    }
+<br /><br />
